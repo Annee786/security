@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import StartUp from '../screens/startup';
 import Login from '../screens/login';
-import {ProfilePicture, SignUp, Signup, Skills, Splash} from '../screens';
+import {ProfilePicture, SignUp, Signup, Skills,ProfileView,About, Splash} from '../screens';
 import PersonalInfo from '../screens/personalinfo';
 import MyBusiness from '../screens/myBusiness';
 import BusinessDescription from'../screens/businessDescription';
@@ -46,7 +46,7 @@ function App() {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName="Home">
+        initialRouteName="About">
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Skills" component={Skills} />
@@ -82,6 +82,8 @@ function App() {
         <Stack.Screen name="Warnings" component={Warnings} />
         <Stack.Screen name="EditRole" component={EditRole} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="ProfileView" component={ProfileView} />
+        <Stack.Screen name="About" component={About} />
 
 
 

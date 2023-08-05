@@ -3,14 +3,19 @@ import React from 'react';
 import {colors, images, fonts} from '../../utils';
 
 const MessageBox = ({placeHolder, 
+  inputmessage,
   describeMore,
-arrowUp}) => {
+arrowUp,
+textinput}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,{
+      backgroundColor:textinput? colors.white : colors.lightblue,
+      flexDirection:'column'}]}>
       <TextInput
         placeholderTextColor={''}
         placeholder={placeHolder}
-        style={styles.input}
+        style={[styles.input,{ color:textinput?colors.lightblack:colors.grey,
+        }]}
       />
       {describeMore && (
         <Image style={styles.moreimage} source={images.moreImage}></Image>
@@ -18,6 +23,14 @@ arrowUp}) => {
         {arrowUp && (
         <Image style={styles.arrowimage} source={images.arrowUp}></Image>
       )}
+{textinput && (
+        <Text style={[styles.inputText,{
+          color:textinput?colors.inputmessage:colors.grey,
+        
+  
+        }]}>{inputmessage}</Text>
+)}
+
     </View>
   );
 };
@@ -60,5 +73,10 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     tintColor:'black',
     paddingTop:20,
+  },
+  inputText:{
+    color: colors.inputmessage,
+    fontSize: 12,
+    fontFamily: fonts.regular,
   }
 });

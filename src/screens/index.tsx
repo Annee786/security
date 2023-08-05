@@ -32,6 +32,8 @@ export {default as EditDescription} from './editDescription';
 export {default as AddContribution} from './addContribution';
 export {default as AddNewRole} from './addingNewRole';
 export {default as Home} from './home';
+export {default as ProfileView} from './profileView';
+export {default as About} from './about';
 
 
 

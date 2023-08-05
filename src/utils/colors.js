@@ -26,5 +26,7 @@ export default {
   fileShade:'#D6D6D6',
   offWhite:'#EBEBEB',
   pink:'#FFDEDE',
-  red:'#FF5050'
-};
+  red:'#FF5050',
+  chatgrey:'#F0F0F0',
+  inputmessage:'#696767'
+}

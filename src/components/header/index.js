@@ -3,25 +3,16 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import images from '../../utils/images';
 import {colors, fonts} from '../../utils';
 
-const Header = ({heading, 
-  alarmNotification,
-recordBox}) => {
+const Header = ({heading, subText
+}) => {
   return (
     <View style={styles.container}>
-      <Image style={styles.backarrow} source={images.ArrowBack} />
+      <Image style={styles.imageView} source={images.Pattern} />
 
       <Text style={styles.mainheading}>{heading}</Text>
-      {alarmNotification? (
-        <View style={styles.blackCircle}>
-          <Image style={styles.picture} source={images.notification}></Image>
-        </View>
-      ):
-      <Image style={styles.backarrow} />
-    
-    }
-     {recordBox && (
-        <Image style={styles.picture} source={images.recordBox}></Image>
-      )}
+      <Text style={styles.subText}>{subText}</Text>
+
+     
     </View>
   );
 };
@@ -30,42 +21,31 @@ export default Header;
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 5,
-    paddingHorizontal: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    height:50
+    paddingBottom:30,
+paddingHorizontal:10
   },
   mainheading: {
     alignItems: 'center',
-    color: colors.jetblack,
-    fontSize: 15,
+    color: colors.black,
+    fontSize: 28,
     fontFamily: fonts.bold,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
   },
 
-  backarrow: {
+  imageView: {
     resizeMode: 'contain',
-    height: 15,
-    width: 15,
-    tintColor:"black"
+    height: 200,
+    width:'100%',
   },
-  picture: {
-    height: 15,
-    width: 15,
-    resizeMode: 'contain',
-  },
-  blackCircle: {
-    justifyContent: 'center',
+  subText:{
     alignItems: 'center',
-    height: 30,
-    width: 30,
-    backgroundColor: colors.lightblack,
-    borderRadius: 15,
-  },
- 
+    color: colors.grey,
+    fontSize: 12,
+    fontFamily: fonts.medium,
+    paddingHorizontal: 15,
+  }
+
+
 
 
 });

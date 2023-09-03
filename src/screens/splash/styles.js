@@ -3,14 +3,14 @@ import {colors, fonts} from '../../utils';
 
 export default StyleSheet.create({
   splashView: {
-    backgroundColor: colors.lightblack,
+    backgroundColor: colors.white,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontSize: 30,
-    color: colors.white,
-    fontFamily: fonts.bold,
-  },
+logoView:{
+    resizeMode:'contain',
+    height:150,
+    width:150
+}
 });

@@ -1,12 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View,Image} from 'react-native';
 import styles from './styles';
+import { images } from '../../utils';
 
 const Splash = ({}) => {
   return (
     <View style={styles.splashView}>
-      <Text style={styles.text}>LOGO</Text>
-    </View>
+<Image style={styles.logoView}source={images.logo}></Image>   
+ </View>
   );
 };
 

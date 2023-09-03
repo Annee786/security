@@ -57,7 +57,7 @@ const Picture = [
     image:images.ConorMurphy
   },
   {
-    image:images.Conor
+    image:images.ConorMurphy
   },
   {
     image:images.ConorMurphy

@@ -4,43 +4,68 @@ import {colors, fonts, images} from '../../utils';
 
 const Input = ({
   placeHolder,
-  inputHeading,
-  showArrowButton,
-  isPassword,
+  isEye,
   isEmail,
-  showTime,
-  showArrowUp,
-  search,
-  describeMore,
-  
+  isUser,
+  isPhone,
+  tabHeader,
+  blackHeader,
+  isArrowdown,
+  mapin,
+  locate,
 }) => {
   return (
- 
+    <View>
+      <Text
+        style={[
+          styles.tabHeader,
+          {
+            color: blackHeader ? colors.black : colors.grey,
+            fontSize: blackHeader ? 14 : 16,
+          },
+        ]}>
+        {tabHeader}
+      </Text>
       <View style={styles.container}>
         <TextInput
           placeholderTextColor={''}
           placeholder={placeHolder}
-          style={styles.input}
+          style={[
+            styles.input,
+            {
+              fontSize: blackHeader ? 12 : 14,
+            },
+          ]}
         />
-        {showArrowButton && (
-          <Image style={styles.eyeimage} source={images.pushArrow}></Image>
+        {mapin && (
+          <Image
+            style={[
+              styles.imageView,
+              {
+                tintColor: mapin ? colors.blue : colors.black,
+              },
+            ]}
+            source={images.mappin}></Image>
         )}
-        {isPassword && (
-          <Image style={styles.eyeimage} source={images.eyeImage}></Image>
+        {isArrowdown && (
+          <Image style={styles.imageView} source={images.down}></Image>
         )}
-        
-        {isEmail && <Text style={styles.emailText}>Email</Text>}
-        {showTime && <Text style={styles.timeText}>hours</Text>}
-        {showArrowUp && (
-          <Image style={styles.eyeimage} source={images.pushArrowUp}></Image>
+
+        {isEye && <Image style={styles.imageView} source={images.eye}></Image>}
+
+        {isEmail && (
+          <Image style={styles.imageView} source={images.mail}></Image>
         )}
-        {search && (
-          <Image style={styles.eyeimage} source={images.searchImage}></Image>
+        {isUser && (
+          <Image style={styles.imageView} source={images.user}></Image>
         )}
-        {describeMore && (
-          <Image style={styles.moreimage} source={images.moreImage}></Image>
+        {isPhone && (
+          <Image style={styles.imageView} source={images.phone}></Image>
         )}
-   
+ {locate && (
+          <Image style={styles.imageView} source={images.locatefixed}></Image>
+        )}
+      </View>
     </View>
   );
 };
@@ -49,57 +74,36 @@ export default Input;
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: colors.lightgrey,
-    backgroundColor: colors.lightgrey,
-    height: 60,
-    width: '100%',
-    borderRadius: 5,
+    borderColor: colors.grey,
+    backgroundColor: colors.white,
+    height: 50,
+    width: '90%',
+    borderRadius: 10,
     padding: 5,
-    justifyContent: 'space-between',
     alignSelf: 'center',
     borderWidth: 1,
     flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 10,
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
   },
   input: {
     color: colors.grey,
     fontSize: 12,
     fontFamily: fonts.regular,
   },
-  text: {
+  tabHeader: {
     fontSize: 12,
     color: colors.grey,
     fontFamily: fonts.medium,
+    paddingVertical: 15,
+    paddingLeft: 20,
   },
-  inputBox: {
-    paddingHorizontal: 20,
-    marginTop: 10,
-  },
-  eyeimage: {
+
+  imageView: {
     height: 20,
     width: 20,
     resizeMode: 'contain',
-  },
-  emailText: {
-    fontFamily: fonts.light,
-    fontSize: 10,
-    color: colors.grey,
-  },
-  timeText: {
-    fontFamily: fonts.medium,
-    fontSize: 12,
-    color: colors.darkgrey,
-  },
-  moreimage: {
-    height: 20,
-    width: 20,
-    resizeMode: 'contain',
+    tintColor: colors.grey,
     margin: 10,
   },
-  image:{
-    height: 20,
-    width: 20,
-    resizeMode: 'contain',
-  }
 });

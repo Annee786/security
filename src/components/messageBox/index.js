@@ -2,35 +2,47 @@ import {StyleSheet, Text, TextInput, Image, View} from 'react-native';
 import React from 'react';
 import {colors, images, fonts} from '../../utils';
 
-const MessageBox = ({placeHolder, 
+const MessageBox = ({
+  placeHolder,
   inputmessage,
   describeMore,
-arrowUp,
-textinput}) => {
+  arrowUp,
+  textinput,
+}) => {
   return (
-    <View style={[styles.container,{
-      backgroundColor:textinput? colors.white : colors.lightblue,
-      flexDirection:'column'}]}>
+    <View
+      style={[
+        styles.container,
+        {
+          backgroundColor: textinput ? colors.white : colors.lightblue,
+          flexDirection: 'column',
+        },
+      ]}>
       <TextInput
         placeholderTextColor={''}
         placeholder={placeHolder}
-        style={[styles.input,{ color:textinput?colors.lightblack:colors.grey,
-        }]}
+        style={[
+          styles.input,
+          {color: textinput ? colors.lightblack : colors.grey},
+        ]}
       />
       {describeMore && (
         <Image style={styles.moreimage} source={images.moreImage}></Image>
       )}
-        {arrowUp && (
+      {arrowUp && (
         <Image style={styles.arrowimage} source={images.arrowUp}></Image>
       )}
-{textinput && (
-        <Text style={[styles.inputText,{
-          color:textinput?colors.inputmessage:colors.grey,
-        
-  
-        }]}>{inputmessage}</Text>
-)}
-
+      {textinput && (
+        <Text
+          style={[
+            styles.inputText,
+            {
+              color: textinput ? colors.inputmessage : colors.grey,
+            },
+          ]}>
+          {inputmessage}
+        </Text>
+      )}
     </View>
   );
 };
@@ -48,35 +60,33 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     marginTop: 10,
-    alignItems:'flex-start',
-    alignSelf:'center',
-    paddingHorizontal:10,
-    paddingVertical:10
-
+    alignItems: 'flex-start',
+    alignSelf: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 10,
   },
   input: {
     color: colors.grey,
     fontSize: 14,
     fontFamily: fonts.regular,
-
   },
 
   moreimage: {
     height: 20,
     width: 20,
     resizeMode: 'contain',
-    margin:10
+    margin: 10,
   },
-  arrowimage:{
+  arrowimage: {
     height: 15,
     width: 15,
     resizeMode: 'contain',
-    tintColor:'black',
-    paddingTop:20,
+    tintColor: 'black',
+    paddingTop: 20,
   },
-  inputText:{
+  inputText: {
     color: colors.inputmessage,
     fontSize: 12,
     fontFamily: fonts.regular,
-  }
+  },
 });

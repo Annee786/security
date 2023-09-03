@@ -1,21 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet, ImageBackground} from 'react-native';
-import images from '../../utils/images';
-import {colors, fonts} from '../../utils';
+import {View, Text, StyleSheet, Image} from 'react-native';
+import {colors, fonts, images} from '../../utils';
 
-const BreadCrum = ({heading, seeTab}) => {
+const BreadCrum = ({heading, isimage, subheading}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.mainHeading}>{heading}</Text>
-      {seeTab && (
-        <View style={styles.seeView}>
-          <ImageBackground
-            style={styles.rectangleimage}
-            source={images.Rectangle}>
-            <Text style={styles.seeAllText}>See All</Text>
-          </ImageBackground>
-        </View>
-      )}
+      <View style={styles.imageView}>
+        {isimage && (
+          <Image style={styles.plusimage} source={images.pluscircle}></Image>
+        )}
+        {isimage && <Text style={styles.subHeading}>{subheading}</Text>}
+      </View>
     </View>
   );
 };
@@ -24,40 +20,31 @@ export default BreadCrum;
 
 const styles = StyleSheet.create({
   mainHeading: {
-    alignItems: 'center',
     fontFamily: fonts.semiBold,
-    color: colors.lightblack,
+    color: colors.black,
     fontSize: 16,
   },
 
   container: {
-    flexDirection: 'row',
     marginBottom: 10,
-    alignItems: 'center',
     marginTop: 20,
+    paddingHorizontal: 20,
+    flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 20,
-  },
-  seeView: {
-    justifyContent: 'center',
-    height: 40,
-    width: 50,
     alignItems: 'center',
   },
-  text: {
-    fontFamily: fonts.light,
-    color: colors.grey,
-    fontSize: 10,
-  },
-  rectangleimage: {
+  plusimage: {
     height: 20,
-    width: 45,
-    resizeMode: 'center',
+    width: 20,
+    resizeMode: 'contain',
   },
-  seeAllText: {
-    fontFamily: fonts.light,
-    fontSize: 8,
-    color: colors.darkshade,
-    alignSelf: 'center',
+  subHeading: {
+    fontFamily: fonts.semiBold,
+    color: colors.black,
+    fontSize: 14,
+    paddingLeft: 5,
+  },
+  imageView: {
+    flexDirection: 'row',
   },
 });

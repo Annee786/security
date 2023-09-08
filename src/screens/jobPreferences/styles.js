@@ -27,10 +27,17 @@ justifyContent:'space-between',
 flexDirection:'row'
   },
   imageView:{
+    height:15,
+    width:15,
+    resizeMode:'contain',
+  },
+  squarecheck:{
     height:20,
     width:20,
-    resizeMode:'contain',
-   
- 
+    borderColor:colors.blue,
+    borderWidth:1,
+    justifyContent:'center',
+    alignItems:'center'
   }
+
 })

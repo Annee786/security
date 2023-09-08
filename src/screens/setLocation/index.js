@@ -34,10 +34,15 @@ const SetLocation = ({}) => {
         <Text style={styles.milesText}>100 Miles</Text>
       </View>
 
-<View style={styles.map}>
-    <ImageBackground style={styles.mapimage}source={images.map}></ImageBackground>
-    <Image style={styles.mapin}source={images.mappin}></Image>
-</View>
+      <View style={styles.mapView}>
+          <ImageBackground
+            style={styles.map}
+            source={images.map}>
+            
+            <Image style={styles.mapPin} source={images.symbolLocation}></Image>
+        
+          </ImageBackground>
+        </View>
 <Cylinder heading="Set Location" isBlue/>
     </ScrollView>
     </SafeAreaView>

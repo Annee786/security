@@ -2,7 +2,9 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {colors, fonts, images} from '../../utils';
 
-const BreadCrum = ({heading, isimage, subheading}) => {
+const BreadCrum = ({heading, isimage,
+   subheading,
+   isBlue}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.mainHeading}>{heading}</Text>
@@ -12,6 +14,14 @@ const BreadCrum = ({heading, isimage, subheading}) => {
         )}
         {isimage && <Text style={styles.subHeading}>{subheading}</Text>}
       </View>
+      <Text
+        style={[
+          styles.inputText,
+          {
+            color: isBlue ? colors.white:colors.blue }
+        ]}>
+        {subheading}
+      </Text>
     </View>
   );
 };

@@ -13,6 +13,7 @@ const Input = ({
   isArrowdown,
   mapin,
   locate,
+
 }) => {
   return (
     <View>
@@ -42,7 +43,7 @@ const Input = ({
             style={[
               styles.imageView,
               {
-                tintColor: mapin ? colors.blue : colors.black,
+                tintColor: mapin ? colors.blue : locate? colors.blue:colors.black,
               },
             ]}
             source={images.mappin}></Image>
@@ -65,6 +66,7 @@ const Input = ({
  {locate && (
           <Image style={styles.imageView} source={images.locatefixed}></Image>
         )}
+      
       </View>
     </View>
   );
@@ -95,7 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.grey,
     fontFamily: fonts.medium,
-    paddingVertical: 15,
+    paddingVertical:10,
     paddingLeft: 20,
   },
 

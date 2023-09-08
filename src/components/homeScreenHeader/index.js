@@ -4,7 +4,9 @@ import images from '../../utils/images';
 import {colors, fonts} from '../../utils';
 
 const Header = ({heading, 
-  subheading}) => {
+  subheading,
+  danial,
+  marium}) => {
   return (
     <View style={styles.container}>
 <View style={{flexDirection:'column',justifyContent:'space-between',}}>
@@ -14,7 +16,12 @@ const Header = ({heading,
       </View>
       <View style={{flexDirection:'row',alignItems:'center'}}>
       <Image style={styles.bellimage} source={images.bellblue}></Image>
-      <Image style={styles.mariumimage} source={images.marium}></Image>
+      {danial && (
+          <Image style={styles.imageView} source={images.danial}></Image>
+        )}
+ {marium && (
+          <Image style={styles.imageView} source={images.mariumKhalid}></Image>
+        )}
       </View>
       </View>
    
@@ -27,26 +34,26 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 20,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
+    paddingTop:20,
     flexDirection: 'row',
     justifyContent:'space-between',
-    
-    height:50,
+    height:70,
+    width:'100%'
   },
   mainheading: {
     alignItems: 'center',
     color: colors.grey,
     fontSize: 16,
     fontFamily: fonts.bold,
-    paddingHorizontal: 10,
+    
   },
   subheading:{
     alignItems: 'center',
     color: colors.black,
     fontSize: 22,
     fontFamily: fonts.bold,
-    paddingHorizontal: 10,
+  
 
   },
 
@@ -55,7 +62,7 @@ hand: {
     width: 100,
     resizeMode: 'contain',
   },
-  mariumimage:{
+  imageView:{
     height: 55,
     width: 55,
     resizeMode: 'contain',

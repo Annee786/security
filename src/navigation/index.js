@@ -10,9 +10,8 @@ import Notification from '../screens/notification';
 import {Messages,ChatWithPlumber} from '../screens/';
 import JobsPending from '../screens/jobsPending';
 import {Profile,EditProfile} from '../screens/'
-import {Payment,SubscriptionPayment,TrackPlumber,Subscription} from '../screens/';
-import SignUpSuccessfull from '../screens/';
-import{ JobPreferences,SetLocation} from '../screens/';
+import {Payment,SubscriptionPayment,DashBoard,Subscription} from '../screens/';
+import{ JobPreferences,SetLocation,JobDetails,JobStatus,RatingReview} from '../screens/';
 
 
 const Stack = createNativeStackNavigator();
@@ -24,7 +23,7 @@ function App() {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName="EditProfile">
+        initialRouteName="RatingReview">
 
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Splash2" component={Splash2} />
@@ -45,14 +44,21 @@ function App() {
         <Stack.Screen name="JobsPending" component={JobsPending} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="EditProfile" component={EditProfile} />
-        <Stack.Screen name="Subscription" component={Subscription} />
         <Stack.Screen name="Payment" component={Payment} />
-        <Stack.Screen name="SubscriptionPayment" component={SubscriptionPayment} />
-        <Stack.Screen name="TrackPlumber" component={TrackPlumber} />
         <Stack.Screen name="BookingConfirmed" component={BookingConfirmed} />
         <Stack.Screen name="PlumberDetails" component={PlumberDetails} />
+        <Stack.Screen name="Subscription" component={Subscription} />
+        <Stack.Screen name="SubscriptionPayment" component={SubscriptionPayment} />
+
         <Stack.Screen name="JobPreferences" component={JobPreferences} />
         <Stack.Screen name="SetLocation" component={SetLocation} />
+        <Stack.Screen name="DashBoard" component={DashBoard} />
+        <Stack.Screen name="JobDetails" component={JobDetails} />
+        <Stack.Screen name="JobStatus" component={JobStatus} />
+        <Stack.Screen name="RatingReview" component={RatingReview} />
+
+
+
       </Stack.Navigator>
     </NavigationContainer>
   );

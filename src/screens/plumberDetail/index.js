@@ -68,7 +68,7 @@ const PlumberDetails = ({item}) => {
           <View style={styles.square}>
             <Image
               style={styles.imageView}
-              source={images.messagecircle}></Image>
+              source={images.message}></Image>
           </View>
           <View style={styles.square}>
             <Image style={styles.imageView} source={images.phone}></Image>

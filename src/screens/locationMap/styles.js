@@ -65,7 +65,7 @@ export default StyleSheet.create({
     fontFamily: fonts.light,
     fontSize: 14,
   },
-  mapPin: {width: 25, height: 25, resizeMode: 'contain'},
+  mapPin: {width: 25, height: 25, resizeMode: 'contain',},
   text: {
     color: colors.white,
     fontFamily: fonts.light,

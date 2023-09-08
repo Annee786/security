@@ -53,7 +53,10 @@ const renderItem = ({item}) => {
   return (
     <View style={styles.textView}>
       <Text style={styles.text}>{item.text}t</Text>
+      <View style={styles.squarecheck}>
+
       <Image style={styles.imageView} source={item.image}></Image>
+      </View>
     </View>
   );
 };

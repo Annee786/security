@@ -7,7 +7,7 @@ import JobHeader from '../../components/jobHeader';
 import Input from '../../components/input';
 import Button from '../../components/button';
 
-const BookingConfirmed = ({}) => {
+const BookingConfirmed = ({navigation}) => {
   return (
     <SafeAreaView style={styles.pageView}>
       <View style={styles.circle}>
@@ -27,8 +27,8 @@ const BookingConfirmed = ({}) => {
         </Text>
      
       </View>
-      <Button heading="Track your Plumber" isWhite/>
-      <Button heading="Back to Homepage" isBlue/>
+      <Button  onPress={() => navigation.navigate('PlumberDetails')}  heading="Track your Plumber" isWhite/>
+      <Button  onPress={() => navigation.navigate('PlumberDetails')}  heading="Back to Homepage" isBlue/>
     </SafeAreaView>
   );
 };

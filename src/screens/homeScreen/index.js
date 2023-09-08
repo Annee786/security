@@ -97,7 +97,7 @@ const renderCard = ({item}) => {
 const HomeScreen = ({}) => {
   return (
     <SafeAreaView style={styles.pageView}>
-      <HomeScreenHeader heading="Welcome Back!" subheading="Marium 👋" />
+      <HomeScreenHeader heading="Welcome Back!" subheading="Marium 👋" marium />
       <ScrollView>
         <View style={styles.exploreBox}>
           <View style={styles.textImageView}>

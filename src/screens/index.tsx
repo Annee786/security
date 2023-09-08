@@ -18,12 +18,15 @@ export {default as Profile} from './profile';
 export {default as EditProfile} from './editProfile';
 export {default as Payment} from './payment';
 export {default as SubscriptionPayment} from './subscriptionpayment';
-export {default as TrackPlumber} from './trackPlumber';
+export {default as DashBoard} from './dashboard';
 export {default as PlumberDetails} from './plumberDetail';
 export {default as BookingConfirmed} from './bookingConfirmed';
 export {default as Subscription} from './subscription';
 export {default as SignUpSuccessfull} from './signUpSuccessful';
 export {default as JobPreferences} from './jobPreferences';
 export {default as SetLocation} from './setLocation';
+export {default as JobDetails} from './jobDetails';
+export {default as JobStatus} from './jobStatus';
+export {default as RatingReview} from './ratingReview';
 
 

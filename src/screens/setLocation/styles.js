@@ -43,7 +43,8 @@ export default StyleSheet.create({
     borderColor:colors.blue,
     backgroundColor:colors.blue,
     borderRadius:10,
-    borderWidth:1
+    borderWidth:1,
+    alignSelf:'flex-end',
   },
   milesText:{
     fontFamily:fonts.medium,
@@ -78,5 +79,21 @@ paddingHorizontal:20
     height:50,
     width:50,
     resizeMode:'contain'
-  }
+  },
+  map: {
+    width: '100%',
+    height: 300,
+    resizeMode: 'contain',
+    alignItems:"center",
+    justifyContent:'center'
+  },
+  mapView: {
+    height: '40%',
+    width: '100%',
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    marginTop: 10,
+  },
+  mapPin: {width: 25, height: 25, resizeMode: 'contain',alignItems:'center'},
+
 })

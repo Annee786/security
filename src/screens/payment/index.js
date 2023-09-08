@@ -48,7 +48,7 @@ const Payment = ({navigation}) => {
         <TimeTab tabHeader="CVV" placeHolder="xxx" />
         <TimeTab tabHeader="Date" placeHolder="07/23" />
       </View>
-      <Button  onPress={() => navigation.navigate('Subscription')}  heading="Confirm" isBlue />
+      <Button  onPress={() => navigation.navigate('BookingConfirmed')}  heading="Confirm" isBlue />
     </SafeAreaView>
   );
 };

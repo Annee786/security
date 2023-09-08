@@ -15,5 +15,6 @@ cylinder:'#D1D1D6',
 lightBlue:'#F1F6FF',
 seagreen:'#57F2CD',
 gray:"#828282",
-skylight:'#F5F9FF'
+skylight:'#F5F9FF',
+lightsea:'#EEF3FC'
 }

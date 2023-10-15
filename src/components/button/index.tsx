@@ -1,35 +1,11 @@
 import {StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {colors, fonts, images} from '../../utils';
+import {colors, fonts} from '../../utils';
 
-const Button = ({heading, onPress, isBlue, isWhite, isgrey, inImage}) => {
+const Button = ({heading, onPress}) => {
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={[
-        styles.container,
-        {
-          backgroundColor: isWhite ? colors.white : 
-           isBlue ?colors.blue:isgrey?colors.grey:colors.white,
-          borderColor: isWhite ? colors.blue :  inImage ? colors.black :
-          isgrey?colors.grey:colors.white,
-          borderWidth: isWhite ? 1 : inImage ? 1 : isgrey? 1: 2,
-          
-        },
-      ]}>
-      <Text
-        style={[
-          styles.inputText,
-          {color: isWhite ? colors.blue : isBlue ? colors.white :
-             isgrey ? colors.white :
-             inImage ? colors.black : colors.blue},
-         
-        ]}>
-        {inImage && (
-          <Image style={styles.googleimage} source={images.google}></Image>
-        )}
-        {heading}
-      </Text>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
+      <Text style={styles.inputText}>{heading}</Text>
     </TouchableOpacity>
   );
 };
@@ -42,19 +18,15 @@ const styles = StyleSheet.create({
     height: 55,
     width: '90%',
     marginTop: 20,
-    borderRadius: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderRadius: 10,
     alignSelf: 'center',
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   inputText: {
     color: colors.white,
     fontSize: 14,
-    fontFamily: fonts.medium,
-  },
-  googleimage: {
-    height: 25,
-    width: 25,
-    resizeMode: 'contain',
-  },
+    fontFamily: fonts.medium,}
+
 });

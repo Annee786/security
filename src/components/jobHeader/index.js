@@ -3,23 +3,23 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import images from '../../utils/images';
 import {colors, fonts} from '../../utils';
 
-const JobHeader = ({heading, isblue, bell}) => {
+const JobHeader = ({heading, addtab,tintColor,white}) => {
   return (
     <View style={styles.container}>
-      <View style={styles.arrowView}>
-        <Image style={styles.imageView} source={images.leftarrow} />
-      </View>
-      <Text
-        style={[
-          styles.mainheading,
-          {
-            color: isblue ? colors.blue : colors.black,
-          },
-        ]}>
-        {heading}
-      </Text>
-      {bell ? <Image style={styles.picture} source={images.bellicon}/>:
-      <Image style={styles.picture}/>}
+     <Image style={[styles.imageView,{color:tintColor?colors.white:colors.white}]}
+     source={images.arrowLeft} />
+      <Text style={[styles.mainheading,{color:white}]}>{heading}</Text>
+      {addtab ? 
+        <View style={styles.addtab}>
+          <Image style={styles.plusimage} source={images.plus} />
+          <Text style={styles.addText}>Add New</Text>
+          </View> :
+            <View>
+            <Text style={styles.addText}></Text>
+            </View>
+          }
+         
+  
     </View>
   );
 };
@@ -30,38 +30,41 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 5,
-    paddingHorizontal: 10,
-    flexDirection: 'row',
+    marginVertical: 20,
+    paddingHorizontal: 20,
     justifyContent: 'space-between',
-    height: 50,
   },
   mainheading: {
-    color: colors.black,
+    color: colors.breadcrum,
     fontSize: 16,
     fontFamily: fonts.bold,
-    paddingHorizontal: 10,
   },
 
   imageView: {
     resizeMode: 'contain',
-    height: 25,
-    width: 25,
+    height: 24,
+    width: 24,
   },
-  picture: {
+  plusimage: {
+    resizeMode: 'contain',
     height: 15,
     width: 15,
-    resizeMode: 'contain',
+    tintColor:colors.white
   },
-  arrowView: {
-    height: 45,
-    width: 45,
-    backgroundColor: colors.lightBlue,
-    borderColor: colors.lightBlue,
-    borderRadius: 5,
-    borderWidth: 1,
-    justifyContent: 'center',
+  addText: {
+    color: colors.white,
+    fontSize: 9,
+    fontFamily: fonts.light,
+    margin:5
+  },
+  addtab: {
+    flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 5,
+    height: 30,
+    width: 80,
+    borderColor: colors.blue,
+    backgroundColor:colors.blue,
+    borderRadius: 15,
+    justifyContent: 'center',
   },
 });

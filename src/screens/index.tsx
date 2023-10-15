@@ -1,32 +1,26 @@
-export {default as Splash2} from './splash2';
 export {default as Splash} from './splash';
-export {default as OnBoarding1} from './onBoarding1';
-export {default as OnBoarding2} from './onBoarding2';
-export {default as LoginUnfill} from './loginUnfill';
-export {default as SignUpUnfill} from './signupUnfill';
-export {default as ForgetPassword} from './forgetPassword';
-export {default as HomeScreen} from './homeScreen';
-export {default as LogAJob} from './logaJob';
-export {default as UploadedFields} from './uploadedFields';
-export {default as LocationMap} from './locationMap';
-export {default as JobCreated} from './jobCreated';
-export {default as PlumberRequests} from './plumberRequests';
-export {default as Notification} from './notification';
-export {default as Messages} from './messages';
-export {default as ChatWithPlumber} from './chatwithPlumber';
-export {default as Profile} from './profile';
-export {default as EditProfile} from './editProfile';
-export {default as Payment} from './payment';
-export {default as SubscriptionPayment} from './subscriptionpayment';
+export {default as Login} from './login';
 export {default as DashBoard} from './dashboard';
-export {default as PlumberDetails} from './plumberDetail';
-export {default as BookingConfirmed} from './bookingConfirmed';
-export {default as Subscription} from './subscription';
-export {default as SignUpSuccessfull} from './signUpSuccessful';
-export {default as JobPreferences} from './jobPreferences';
-export {default as SetLocation} from './setLocation';
-export {default as JobDetails} from './jobDetails';
-export {default as JobStatus} from './jobStatus';
-export {default as RatingReview} from './ratingReview';
+export {default as EmployeeAccount} from './employeeAccount';
+export {default as AddnewEmployee} from './addnewEmployee';
+export {default as AddnewVenue} from './newVenue';
+export {default as VenueList} from './venueList';
+export {default as JobPost} from './jobPost';
+export {default as EmployeeDetails} from './employeeDetails';
+export {default as Jobs} from './jobs';
+export {default as SupportChatList} from './supportChatList';
+export {default as Chat} from './chat';
+export {default as PaymentHistory} from './paymentHistory';
+export {default as ActivityLog} from './activityLog';
+export {default as DashBoardEmployee} from './dashboardEmployee';
+export {default as JobRequest} from './jobRequest';
+export {default as Notification} from './notification';
+export {default as PaymentHistoryList} from './paymenthistoryList';
+export {default as MyEarnings} from './myEarnings';
+export {default as EmployeeJobDetails} from './employeeJobdetails';
+export {default as AdminProfile} from './adminProfile';
+
+
+
 
 

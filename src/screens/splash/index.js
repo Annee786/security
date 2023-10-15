@@ -6,7 +6,7 @@ import { images } from '../../utils';
 const Splash = ({}) => {
   return (
     <View style={styles.splashView}>
-<Image style={styles.logoView}source={images.logo}></Image>   
+<Image style={styles.logoView}source={images.nabSecurity}></Image>   
  </View>
   );
 };

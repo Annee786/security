@@ -1,128 +1,101 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import {images} from '../../utils';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import JobHeader from '../../components/jobHeader';
 import HomeScreenHeader from '../../components/homeScreenHeader';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import BreadCrum from '../../components/breadCrumbs';
 import {FlatList} from 'react-native';
-import Cylinder from '../../components/cylinder';
 
-const jobItems = [
+const Accounts = [
   {
-    image: images.fittingShower,
-    jobTitle: 'Bath shower Fitting',
-    date: '15 mins |  4 Miles ',
-    charges: '$ 300',
+    image: images.Ronald,
+    user: 'Jacob Jones',
+    time: 'Added 20 mins ago',
   },
-
   {
-    image: images.sinkClogged,
-    jobTitle: 'Tap Replacement',
-    date: '29 mins |  9.5 Miles',
-    charges: '$ 170',
+    image: images.Esther,
+    user: 'Jenny Wilson',
+    time: 'Added 48 mins ago',
+  },
+  {
+    image: images.Darell,
+    user: 'Darrell Steward',
+    time: 'Added 1 hours ago',
+  },
+  {
+    image: images.Theresa,
+    user: 'Theresa Webb',
+    time: 'Added 2 hours ago',
   },
 ];
 
-const jobReview = [
+const Details = [
   {
-    image: images.plumber,
-    jobTitle: 'Jobs Requests',
+    image: images.supervisoraccount,
+    usermenu: 'User Accounts',
+  },
+  {
+    image: images.postadd,
+    usermenu: 'Post Job',
   },
 
   {
-    image: images.history,
-    jobTitle: 'Jobs History',
+    image: images.mappin,
+    usermenu: 'Add Venue',
   },
   {
-    image: images.rating,
-    jobTitle: 'Ratings & Reviews',
+    image: images.calenderdays,
+    usermenu: 'Job Calendar',
   },
-
   {
-    image: images.sinkClogged,
-    jobTitle: 'Set Location',
+    image: images.circledollarsign,
+    usermenu: 'Payment History',
   },
 ];
-
-const jobfilters = [
-  {
-    job: 'Leaky Faucet',
-  },
-
-  {
-    job: 'Water Heater Leak',
-  },
-  {
-    job: 'Frozen Pipes',
-  },
-
-  {
-    job: 'Toilet Leakage',
-  },
-];
-const renderJobs = ({item}) => {
+const renderDetails = ({item}) => {
   return (
-    <View style={styles.danialjobView}>
-      <View style={styles.circle}>
-        <Image style={styles.plumber} source={item.image}></Image>
-      </View>
+    <View style={styles.userView}>
       <View style={styles.jobView}>
-        <Text style={styles.textView}>{item.jobTitle}</Text>
-        <Text style={styles.textView}>Requests</Text>
+        <Image style={styles.imageView} source={item.image}></Image>
       </View>
-    </View>
-  );
-};
-const renderFilters = ({item}) => {
-  return (
-    <View style={styles.jobitemsView}>
-      <Text style={styles.jobsitem}>{item.job}</Text>
-      <Image style={styles.cross} source={images.cross}></Image>
+      <Text style={styles.jobdetail}>{item.usermenu}</Text>
     </View>
   );
 };
 const renderItem = ({item}) => {
   return (
-    <View style={styles.container}>
-      <View style={{flexDirection: 'row'}}>
-        <Image style={styles.imageView} source={item.image}></Image>
-        <View style={{flexDirection: 'column'}}>
-          <View style={styles.imagetext}>
-            <Text style={styles.jobtitle}>{item.jobTitle}</Text>
-            <Text style={styles.$Text}>{item.charges}</Text>
-          </View>
-          <View style={styles.imagetext}>
-            <Text style={styles.textView}>View full details</Text>
-            <View style={styles.pindateview}>
-              <Image
-                style={styles.calenderimage}
-                source={images.mappin}></Image>
-              <Text style={styles.dateText}>{item.date} </Text>
-            </View>
-          </View>
+    <View style={styles.accountsView}>
+      <View style={styles.userimageView}>
+        <Image style={styles.userimage} source={item.image} />
+        <View style={styles.nameview}>
+          <Text style={styles.username}>{item.user}</Text>
+          <Text style={styles.time}>{item.time}</Text>
         </View>
       </View>
-
-      <View style={styles.cylinderview}>
-        <Cylinder heading="Decline" isred />
-        <Cylinder heading="Accept" isBlue />
+      <View style={styles.detailView}>
+        <Text  style={styles.detail}>View Details</Text>
       </View>
     </View>
   );
 };
-
-const DashBoard = ({item}) => {
+const DashBoard = ({navigation}) => {
   return (
     <SafeAreaView style={styles.pageView}>
-      <HomeScreenHeader heading="Welcome Back!" subheading="Danial 👋" danial />
-      <FlatList renderItem={renderJobs} data={jobReview} />
-      <BreadCrum heading="Job Filters" subheading="Change" />
-      <FlatList renderItem={renderFilters} data={jobfilters} />
-
-      <BreadCrum heading="Job Results" />
-      <FlatList renderItem={renderItem} data={jobItems} />
+      <HomeScreenHeader
+        heading="Welcome Back"
+        subheading="Jack Deosan"
+        bell
+        message
+      />
+      <FlatList renderItem={renderDetails} data={Details} numColumns={5} />
+      <BreadCrum heading="Recent Added Accounts " subheading="View All" />
+      <FlatList renderItem={renderItem} data={Accounts} />
+      <BreadCrum heading="Create Job Post " />
+      <TouchableOpacity  onPress={() => navigation.navigate('EmployeeAccount')} style={styles.add}>
+        <Image style={styles.plusimage} source={images.plusCircle} />
+        <Text  style={styles.newpost}>Add New Posts</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

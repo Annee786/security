@@ -1,8 +1,9 @@
 export default {
-  regular: 'DMSans-Regular',
-  italic: 'DMSans-Italic',
-  medium: 'DMSans-Medium',
-  light: 'DMSans-Light',
-  bold: 'DMSans-Bold',
-  semiBold: 'DMSans-SemiBold',
+  regular: 'Inter-Regular',
+  ExtraBold: 'Inter-ExtraBold',
+  medium: 'Inter-Medium',
+  light: 'Inter-Light',
+  bold: 'Inter-Bold',
+  semiBold: 'Inter-SemiBold',
+  extraLight:'Inter-ExtraLight'
 };

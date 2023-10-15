@@ -2,72 +2,23 @@ import {StyleSheet, Text, Image, TextInput, View} from 'react-native';
 import React from 'react';
 import {colors, fonts, images} from '../../utils';
 
-const Input = ({
-  placeHolder,
-  isEye,
-  isEmail,
-  isUser,
-  isPhone,
-  tabHeader,
-  blackHeader,
-  isArrowdown,
-  mapin,
-  locate,
-
-}) => {
+const Input = ({placeHolder, tabHeader, image, isimage}) => {
   return (
-    <View>
-      <Text
-        style={[
-          styles.tabHeader,
-          {
-            color: blackHeader ? colors.black : colors.grey,
-            fontSize: blackHeader ? 14 : 16,
-          },
-        ]}>
-        {tabHeader}
-      </Text>
-      <View style={styles.container}>
-        <TextInput
-          placeholderTextColor={''}
-          placeholder={placeHolder}
-          style={[
-            styles.input,
-            {
-              fontSize: blackHeader ? 12 : 14,
-            },
-          ]}
-        />
-        {mapin && (
-          <Image
-            style={[
-              styles.imageView,
-              {
-                tintColor: mapin ? colors.blue : locate? colors.blue:colors.black,
-              },
-            ]}
-            source={images.mappin}></Image>
-        )}
-        {isArrowdown && (
-          <Image style={styles.imageView} source={images.down}></Image>
-        )}
-
-        {isEye && <Image style={styles.imageView} source={images.eye}></Image>}
-
-        {isEmail && (
-          <Image style={styles.imageView} source={images.mail}></Image>
-        )}
-        {isUser && (
-          <Image style={styles.imageView} source={images.user}></Image>
-        )}
-        {isPhone && (
-          <Image style={styles.imageView} source={images.phone}></Image>
-        )}
- {locate && (
-          <Image style={styles.imageView} source={images.locatefixed}></Image>
-        )}
-      
+    <View style={styles.container}>
+      <View style={styles.textimageView}>
+        {image && <Image style={styles.imageView} source={image}></Image>}
+        <View style={{padding:11,
+    
+}}>
+          <Text style={styles.tabHeader}>{tabHeader}</Text>
+          <TextInput
+            placeholderTextColor={''}
+            placeholder={placeHolder}
+            style={styles.input}
+          />
+        </View>
       </View>
+      {isimage && <Image style={styles.eyeimage} source={isimage}></Image>}
     </View>
   );
 };
@@ -76,36 +27,44 @@ export default Input;
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: colors.grey,
-    backgroundColor: colors.white,
-    height: 50,
+    borderColor: colors.border,
+    height: 60,
     width: '90%',
     borderRadius: 10,
-    padding: 5,
     alignSelf: 'center',
     borderWidth: 1,
     flexDirection: 'row',
-    alignItems: 'flex-start',
     justifyContent: 'space-between',
+    margin: 8,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    
   },
   input: {
-    color: colors.grey,
-    fontSize: 12,
-    fontFamily: fonts.regular,
+    fontSize: 14,
+    fontFamily: fonts.medium,
+    color:colors.blue,
   },
   tabHeader: {
     fontSize: 12,
-    color: colors.grey,
-    fontFamily: fonts.medium,
-    paddingVertical:10,
-    paddingLeft: 20,
+    color: colors.graydark,
+    fontFamily: fonts.light,
+    paddingLeft:5
+
   },
 
   imageView: {
     height: 20,
     width: 20,
     resizeMode: 'contain',
-    tintColor: colors.grey,
-    margin: 10,
+  },
+  eyeimage: {
+    height: 20,
+    width: 20,
+    resizeMode: 'contain',
+  },
+  textimageView: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });

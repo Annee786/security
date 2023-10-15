@@ -2,61 +2,23 @@ import {StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {colors, fonts, images} from '../../utils';
 
-const Cylinder = ({
-  heading,
-  onPress,
-  isBlue,
-  isred,
-  imageinblue,
-  imageingrey,
-  mapinblue,
-  locateingrey,
-  doorclosedingrey
-}) => {
+const Cylinder = ({heading, onPress, color, borderColor, textcolor,  image,}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[
         styles.container,
         {
-         
-          backgroundColor: isBlue ? colors.blue :isred ? colors.white :
-            imageingrey ? colors.cylinder :imageinblue?colors.blue: 
-            mapinblue?colors.blue:
-            locateingrey?colors.chatbox:
-            doorclosedingrey?colors.chatbox:colors.black,
-          borderColor:isBlue ? colors.blue :isred ? colors.red :
-           imageingrey ? colors.cylinder : colors.white,}
-         
-        
+          backgroundColor: color,
+          borderColor: borderColor,
+        },
       ]}>
-      {imageinblue && (
-        <Image style={styles.checkcircle} source={images.checkcircle}></Image>
-      )}
-      {imageingrey && (
-        <Image style={styles.checkcircle} source={images.checkcircle}></Image>
-      )}
-       {mapinblue && (
-        <Image style={styles.checkcircle} source={images.mappin}></Image>
-      )}
-         {locateingrey && (
-        <Image style={styles.checkcircle} source={images.locatefixed}></Image>
-      )}
-          {doorclosedingrey && (
-        <Image style={styles.checkcircle} source={images.doorclosed}></Image>
-      )}
+         {image && <Image style={styles.imageView} source={image}></Image>}
       <Text
         style={[
           styles.inputText,
           {
-            color: isBlue ? colors.white :
-            imageingrey ? colors.white: 
-            isred ? colors.red :
-            imageinblue?colors.white:
-            mapinblue?colors.white:
-            locateingrey?colors.black:
-            doorclosedingrey?colors.black:colors.blue,
-            paddingLeft:imageingrey ? 5:10,
+            color: textcolor,
           },
         ]}>
         {heading}
@@ -69,13 +31,14 @@ export default Cylinder;
 
 const styles = StyleSheet.create({
   container: {
-    height: 45,
+    height: 50,
     flexDirection: 'row',
     width: '45%',
-    marginTop: 25,
-    borderRadius: 30,
+    marginTop: 20,
+    borderRadius: 10,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent:'flex-start',
+    paddingHorizontal:10,
     borderWidth: 1,
     marginLeft: 10,
   },
@@ -89,4 +52,10 @@ const styles = StyleSheet.create({
     height: 20,
     width: 20,
   },
+  imageView:{
+    height: 20,
+    width: 20,
+    resizeMode: 'contain',
+    margin:10
+  }
 });

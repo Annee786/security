@@ -6,151 +6,107 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     flex: 1,
   },
-  danialjobView:{
-    height:75,
-    width:'45%',
-    borderRadius:10,
-    backgroundColor:colors.lightsea,
-    borderColor:colors.lightsea,
-    marginLeft:20,
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'space-between',
-    paddingHorizontal:10,
-    marginTop:10,
-   
-
-  },
-  circle:{
-    height:40,
-    width:40,
-    borderRadius:20,
-    backgroundColor:colors.white,
-    borderColor:colors.white,
-    alignItems:'center',
-justifyContent:'center'
-  },
-  plumber:{
-    resizeMode:'contain',
-    height:30,
-    width:30
-  },
-  textView:{
-fontFamily:fonts.semiBold,
-fontSize:14,
-color:colors.black,
-
-  },
-  jobView:{
-    flexDirection:'column',
-    justifyContent:'center',
-    alignItems:'center'
-  },
-  jobitemsView:{
-height:50,
-width:'45%',
-borderColor:colors.blue,
-borderWidth:1,
-justifyContent:'space-between',
-marginLeft:10,
-borderRadius:25,
-alignItems:'center',
-flexDirection:'row',
-paddingHorizontal:15,
-marginTop:10
-  },
-  jobsitem:{
-fontFamily:fonts.regular,
-fontSize:12,
-color:colors.black
-  },
-  cross:{
-height:10,
-width:10,
-resizeMode:'contain'
-  },
-  container: {
-    marginTop:10,
-    height:150,
-    width:'90%',
-    borderRadius:15,
-    paddingVertical:20,
-    borderColor:colors.shadow,
-    backgroundColor:colors.white,
-    paddingHorizontal:15,
-    alignSelf:'center',
-borderWidth:1,
-shadowColor: "#000",
-shadowOffset: {
-	width: 0,
-	height: 2,
-},
-shadowOpacity: 0.25,
-shadowRadius: 3.84,
-
-elevation: 5,
-  },
-
-  imageView: {
+  jobView: {
     height: 50,
     width: 50,
-    resizeMode: 'contain',
+    backgroundColor: colors.blue,
+    justifyContent: 'center',
+    marginLeft: 10,
+    borderRadius: 25,
+    alignItems: 'center',
+    marginTop: 20,
   },
-  jobtitle: {
-    fontFamily: fonts.semiBold,
-    fontSize: 14,
-    color: colors.black,
-     
-
-  },
-  dateText: {
-    fontFamily: fonts.medium,
+  jobdetail: {
+    color: colors.blue,
+    fontFamily: fonts.regular,
     fontSize: 10,
-    color: colors.grey,
-    paddingLeft: 5,  
-
+    paddingHorizontal: 10,
+    textAlign:'center',
+    lineHeight:18
   },
-  $Text: {
-    color: colors.red,
-    fontFamily: fonts.semiBold,
-    fontSize: 14,
-
+  imageView: {
+    height: 25,
+    width: 25,
+    resizeMode: 'contain',
+    tintColor: colors.white,
   },
-  textView: {
+  accountsView: {
+    borderColor: colors.border,
+    width: '90%',
+    height: 60,
+    borderWidth: 1,
+    alignSelf: 'center',
+    borderRadius: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+    marginTop: 10,
+  },
+  nameview: {
+    alignSelf: 'center',
+    padding: 10,
+  },
+  userimage: {
+    height: 35,
+    width: 35,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+  },
+  username: {
+    color: colors.lightblack,
+    fontFamily: fonts.medium,
+    fontSize: 12,
+  },
+  time: {
+    color: colors.lightgrey,
+    fontFamily: fonts.light,
+    fontSize: 9,
+  },
+  detailView: {
+    height: 30,
+    width: 80,
+    backgroundColor: colors.cylinder,
+    borderColor: colors.cylinder,
+    alignSelf: 'center',
+    borderWidth: 1,
+    justifyContent: 'center',
+    borderRadius: 20,
+    alignItems: 'center',
+  },
+  detail: {
+    color: colors.white,
+    fontFamily: fonts.light,
+    fontSize: 9,
+  },
+  add: {
+    height: 50,
+    width: '50%',
+    borderColor: colors.blue,
+    alignSelf: 'center',
+    borderWidth: 1,
+    justifyContent: 'center',
+    borderRadius: 10,
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginVertical: 20,
+  },
+  newpost: {
     color: colors.blue,
     fontFamily: fonts.medium,
-    fontSize: 11, 
-    paddingVertical:5,
+    fontSize: 14,
+    paddingLeft: 5,
   },
-  imagedateView:{
-    flexDirection:'row',
-    alignItems:'center',
-   
+  plusimage: {
+    height: 24,
+    width: 24,
+    resizeMode: 'contain',
   },
-  calenderimage:{
-    height:10,
-    width:10,
-    resizeMode:'contain'
+  userimageView: {
+    flexDirection: 'row',
   },
-
-  imagetext:{
- 
-    flexDirection:'row',
-  paddingHorizontal:10,
-  justifyContent:'space-between',
-  width:'85%',
-  alignItems:'center'
- 
-
+  userView: {
+    height: '100%',
+    width: 70,
+    alignItems: 'center',
   },
-  cylinderview:{
-    flexDirection:'row',
-    alignItems:'center',
- 
-   
-  },
-  pindateview:{
-    alignItems:'center',
-    flexDirection:'row'
-  }
-})
+});
